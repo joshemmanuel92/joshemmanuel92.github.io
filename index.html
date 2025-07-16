@@ -1,0 +1,112 @@
+# Generate a simple HTML resume using the content from the user's uploaded PDF (Josiah Emmanuel's CV)
+from pathlib import Path
+
+cv_html = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Josiah Emmanuel - Product Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 24px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        ul {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Josiah Emmanuel</h1>
+    <p><strong>Product Manager – Fintech & Insurtech Specialist</strong></p>
+    <p>Email: joshemmanuel92@gmail.com | Phone: +62 851-5687-1525 | Location: Jakarta, Indonesia</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/josiah-emmanuel/">linkedin.com/in/josiah-emmanuel/</a></p>
+
+    <h2>Professional Summary</h2>
+    <p>Product Manager with over 6 years of experience in fintech and insurtech across Southeast Asia. Proven ability to lead cross-functional teams, define product strategy, and launch scalable features. Strong expertise in full product lifecycle, A/B testing, market analysis, user research, and stakeholder management. Passionate about building customer-centric digital products using data-driven insights and agile practices.</p>
+
+    <h2>Skills</h2>
+    <ul>
+        <li><strong>Product Management:</strong> Roadmapping, Product Strategy, A/B Testing, User Research, Agile, Scrum</li>
+        <li><strong>Tools:</strong> JIRA, Mixpanel, Looker, Google Analytics, Statsig</li>
+        <li><strong>Data & Analysis:</strong> Data Interpretation, KPI Tracking, Experimentation</li>
+        <li><strong>Soft Skills:</strong> Communication, Critical Thinking, Negotiation, Leadership</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p><strong>Gunadarma University</strong> — Bachelor of Computer Science (2010–2014)</p>
+
+    <h2>Work Experience</h2>
+    <p><strong>Product Owner – Tunaiku, Amar Bank</strong> | Jakarta, Indonesia (Jun 2022 – Present)</p>
+    <ul>
+        <li>Defined product strategy for retention flows, leading to IDR 217B (16%) increase in loan disbursement.</li>
+        <li>Optimized loan application experience, increasing conversion rate by 5% through A/B testing and UX improvements.</li>
+        <li>Spearheaded B2B embedded finance product development.</li>
+        <li>Collaborated with cross-functional teams using Agile methodology.</li>
+    </ul>
+    <p><strong>Product Manager – Qoala</strong> | Jakarta, Indonesia (Feb 2021 – Jun 2022)</p>
+    <ul>
+        <li>Launched 30+ products across Southeast Asia in partnership with local insurance companies.</li>
+        <li>Created roadmap & strategy for 5 insurance product categories.</li>
+        <li>Directed scrum teams and led architecture standardization project.</li>
+    </ul>
+    <p><strong>Associate Product Manager – Qoala</strong> | Jakarta, Indonesia (Dec 2019 – Feb 2021)</p>
+    <ul>
+        <li>Initiated first Qoala products in Thailand, Vietnam, and the Philippines.</li>
+        <li>Built zero-to-one product for accommodation insurance.</li>
+    </ul>
+    <p><strong>Quality Assurance – Salt Indonesia</strong> | Jakarta, Indonesia (Mar 2018 – Dec 2019)</p>
+    <ul>
+        <li>Launched ~10 mobile & web apps, including Telkomsel Dunia Games.</li>
+        <li>Supported UAT, coordinated across teams, and ensured go-live readiness.</li>
+    </ul>
+    <p><strong>Web Content Administrator – ANZ Indonesia</strong> | Jakarta, Indonesia (Mar 2015 – Feb 2018)</p>
+    <ul>
+        <li>Managed 5 microsites, ran analytics, handled vendor coordination.</li>
+    </ul>
+    <p><strong>HR System Analyst Intern – 3M</strong> | Jakarta, Indonesia (Sep 2014 - Dec 2014)</p>
+    <ul>
+        <li>Built HR database system, supported employee training and data entry.</li>
+    </ul>
+
+    <h2>Courses & Certifications</h2>
+    <ul>
+        <li>Advanced Product Management – Udemy (2025)</li>
+        <li>Introduction to Generative AI – AWS Skill Builder (2025)</li>
+        <li>Mixpanel Data Governance – Mixpanel (2024)</li>
+        <li>Intermediate A/B Testing – Amar Bank Training (2024)</li>
+        <li>Looker Data Analysis – Google Cloud (2023)</li>
+        <li>Project Management Life Cycle – edX (2018)</li>
+        <li>CCNA Networking – Cisco (2017–2018)</li>
+        <li>Advanced Google Analytics – Google (2017)</li>
+    </ul>
+
+    <h2>Additional Information</h2>
+    <p><strong>Languages:</strong> English (Professional), Indonesian (Native)</p>
+    <p><strong>Interests:</strong> Volunteering in youth education and community service in slum areas.</p>
+</body>
+</html>
+"""
+
+# Save to file for user to download and host on GitHub Pages
+output_path = Path("/mnt/data/josiah_cv_website.html")
+output_path.write_text(cv_html)
+
+output_path.name  # Return just the filename for user reference
+
